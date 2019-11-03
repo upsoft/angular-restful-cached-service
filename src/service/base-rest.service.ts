@@ -54,14 +54,6 @@ export class BaseRestService {
                 }));
   }
   
-  //Custom POST/PUT methods
-  post(url:string, item: any): Observable<any> {
-    return this.http.post(url, JSON.stringify(item), httpOptions);
-  }
-  put(url:string, item: any): Observable<any> {
-    return this.http.put(url, JSON.stringify(item), httpOptions);
-  }
-
   delete(id): Observable<any> {
     return this.http.delete<any>(`${this.rootApi}${id}`)
                     .pipe(tap((data: any) => {
